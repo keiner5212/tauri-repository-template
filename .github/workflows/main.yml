@@ -26,10 +26,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: setup node
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
+          
+      - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20.14.0
+          node-version: 20
+          cache: 'pnpm'
 
       - name: install Rust stable
         uses: dtolnay/rust-toolchain@stable
@@ -42,9 +49,6 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libwebkit2gtk-4.0-dev libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
           
-
-      - uses: pnpm/action-setup@v2
-      
       - name: install frontend dependencies
         run: pnpm install 
 

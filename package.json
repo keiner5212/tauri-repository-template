@@ -1,8 +1,9 @@
 {
   "name": "tauri-repository-test",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "author": "keiner5212 <kjgameplay0000@gmail.com>",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
