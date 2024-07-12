@@ -1,4 +1,4 @@
-name: 'Create Release'
+name: 'Create Releases'
 
 on:
   push:
@@ -42,6 +42,9 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libwebkit2gtk-4.0-dev libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
           
+
+      - uses: pnpm/action-setup@v2
+      
       - name: install frontend dependencies
         run: pnpm install 
 
